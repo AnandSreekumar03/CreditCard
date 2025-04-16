@@ -103,6 +103,6 @@ Based on the customer segmentation, here are the simplified insights for each cl
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/credit-card-clustering.git
+   git clone https://github.com/AnandSreekumar03/credit-card-clustering.git
    cd credit-card-clustering
    ```
