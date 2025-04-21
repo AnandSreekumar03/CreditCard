@@ -25,77 +25,116 @@ This project applies unsupervised learning (clustering) techniques to segment cr
 
 1. **Data Cleaning**:
 
-   - Handling missing values
-   - Normalizing features
+   - Handled missing values (e.g., `MINIMUM_PAYMENTS`, `CREDIT_LIMIT`)
+   - Normalized features using StandardScaler
 
 2. **Exploratory Data Analysis (EDA)**:
 
-   - Statistical summary
-   - Correlation analysis
+   - Statistical summaries
+   - Correlation heatmaps to explore feature relationships
 
 3. **Clustering**:
 
-   - K-Means algorithm
-   - Elbow Method and Silhouette Score for optimal cluster count
+   - K-Means clustering applied
+   - Optimal number of clusters determined using Elbow Method and Silhouette Score
 
-4. **Visualization**:
-   - Cluster plots using PCA
-   - Box plots to understand feature distributions in clusters
+4. **Dimensionality Reduction**:
+
+   - PCA reduced features to 2D space for visualization
+   - PC1: Spending Behavior
+   - PC2: Credit Utilization & Cash Advances
+
+5. **Visualization**:
+   - Scatter plot showing clusters and centroids in PCA space
+   - Each cluster interpreted based on position and density
 
 ---
 
 ## 📊 Results & Insights
 
-Based on the customer segmentation, here are the simplified insights for each cluster:
+The PCA visualization identified **6 distinct clusters**, each representing a unique customer segment:
 
-- **Yellow Cluster (High Credit Use, Moderate Spending)**:
+### 🟡 Yellow Cluster — Moderate Spending, High Credit Usage
 
-  - These users often borrow more and spend a medium amount.
-  - Suggest offering low-interest plans, debt support, or balance transfers.
-  - They might be at financial risk and need careful monitoring.
+- Positioned high on PC2, low on PC1
+- These users take frequent cash advances and utilize their credit extensively, despite modest spending
+- **Suggestions**:
+  - Monitor for financial risk
+  - Offer budgeting tools, low-interest consolidation options
 
-- **Purple Cluster (Low Spending, Low Credit Use)**:
+---
 
-  - These users are very careful with their spending and borrowing.
-  - Encourage more card use through cashback or rewards.
-  - Good candidates for budgeting tools or saving plans.
+### 🟣 **Indigo** Cluster — Low Spending, Low Credit Use
 
-- **Green Cluster (Higher Spending, Low Credit Use)**:
+- Low on both PC1 and PC2
+- Very cautious with both spending and borrowing
+- **Suggestions**:
+  - Encourage engagement with rewards or loyalty programs
+  - Promote basic savings products
 
-  - These customers are financially stable and use credit wisely.
-  - Could be offered premium cards or higher credit limits.
-  - Great fit for lifestyle rewards and VIP perks.
+---
 
-- **Teal/Turquoise Cluster (Average Spending, Mixed Credit Use)**:
+### 🔵 Blue Cluster — High Spending, Mixed Credit Use
 
-  - Spending habits vary in this group.
-  - Personalized offers work best—like dining, travel, or shopping rewards.
-  - Can benefit from targeted card features.
+- Highest on PC1 (Spending Behavior), moderate on PC2
+- Big spenders with diverse card usage patterns
+- **Suggestions**:
+  - Target with luxury cards, concierge services
+  - Retention is key—offer exclusive benefits
 
-- **Blue Cluster (High Spending, Mixed Credit Use)**:
-  - Big spenders with diverse usage.
-  - Best suited for luxury cards, exclusive services, and high-end rewards.
-  - Focus on keeping them happy and loyal.
+---
 
-### Strategic Suggestions:
+### 🟢 Green Cluster — Moderate-High Spending, Low Credit Use
 
-- Create different marketing plans for each group.
-- Offer products and services that match each group’s habits.
-- Adjust customer service level based on customer value.
-- Help Yellow Cluster manage risk better.
-- Focus on keeping Blue and Teal Clusters with premium benefits.
+- Mid-to-high on PC1, low on PC2
+- Spend responsibly without relying on credit or cash advances
+- **Suggestions**:
+  - Great candidates for credit limit increases
+  - Market travel, lifestyle, or cashback cards
+
+---
+
+### 🟦 Teal Cluster — Average Spending, Average Credit Use
+
+- Centered cluster on both axes
+- Balanced users with moderate behavior
+- **Suggestions**:
+  - Offer personalized reward plans
+  - Promote flexible card features based on usage
+
+---
+
+### 🟣 **Purple** Cluster — Low Spending, Slight Credit Dependence
+
+- Low on PC1 but moderate on PC2
+- Don’t spend much but occasionally rely on credit advances
+- **Suggestions**:
+  - Educate on credit health and interest charges
+  - Introduce credit counseling or micro-loans
+
+---
+
+## 🧠 Strategic Takeaways
+
+- Create tailored marketing strategies per cluster
+- Reduce risk by monitoring high credit users
+- Focus on premium services for high spenders (Blue, Green)
+- Support cautious users with growth options (Purple, Indigo)
 
 ---
 
 ## 🛠️ Tech Stack
 
-- Python
-- Jupyter Notebook
-- Libraries:
-  - `pandas`
-  - `numpy`
-  - `matplotlib`
-  - `sklearn`
+- **Python**
+- **Jupyter Notebook**
+
+### Libraries Used:
+
+- `pandas`
+- `numpy`
+- `matplotlib`
+- `seaborn`
+- `scikit-learn`
 
 ---
 
@@ -103,6 +142,6 @@ Based on the customer segmentation, here are the simplified insights for each cl
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/AnandSreekumar03/credit-card-clustering.git
-   cd credit-card-clustering
+   git clone https://github.com/AnandSreekumar03/CreditCard.git
+   cd CreditCard
    ```
